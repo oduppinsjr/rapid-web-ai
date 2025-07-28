@@ -1,0 +1,177 @@
+Build me a SAAS application according to this MVP: 🧠 MVP Concept: AI Website Builder for Small Businesses
+Working Title: "AutoSite" (placeholder—brand TBD)
+Parent Company: Duppins Technology
+Target Users:
+
+Solopreneurs, freelancers, side hustlers
+
+Small business owners with low budgets
+
+Agencies/consultants who want a fast baseline to customize
+
+🎯 Core Problem
+Non-technical users either:
+
+Get overwhelmed trying to build a website from scratch
+
+Lose momentum when AI doesn't deliver what they expect
+
+Need a jumpstart but don’t want to pay thousands upfront
+
+💡 Solution
+A hybrid AI + template website builder that gives users three on-ramps:
+
+Choose & edit a prebuilt AI website
+
+Generate a new website from a prompt
+
+Modify an existing template using AI instructions
+
+Upsell path: hire a human expert to take over when things get complex.
+
+⚙️ Functional MVP — Version 1
+🛠️ Features
+1. User Authentication
+Sign up/login with email or social
+
+Basic account dashboard (project history, account settings)
+
+2. Website Creation Modes
+Mode A: Template-Based Start
+
+Browse a curated set of AI-generated websites (3–5 verticals to start: e.g., restaurant, personal brand, local service, online portfolio)
+
+One-click duplicate + edit
+
+Can be further modified via visual editor or AI prompts
+
+Mode B: AI-Prompt Builder
+
+User enters a short prompt: "I run a mobile car detailing service in Atlanta"
+
+AI (OpenAI, Claude, etc.) returns:
+
+Site title
+
+3–5 page layout (Homepage, About, Contact, Services, etc.)
+
+Hero content, service descriptions, calls-to-action
+
+Simple styling (based on branding suggestions or default themes)
+
+Mode C: Modify via Chat
+
+On any site/template, user can say:
+
+"Change the color scheme to dark mode"
+
+"Add a testimonial section under the About section"
+
+"Swap all images for stock photos of tacos"
+
+AI generates diffs and applies to the code (or editable blocks)
+
+3. Visual Editor (Basic)
+Drag-and-drop or block-based editor (think Notion-like, not full Webflow)
+
+Limited to:
+
+Text blocks
+
+Image upload/replace
+
+Section reordering
+
+Color/font changes
+
+4. Deployment
+One-click publish to a subdomain: username.autosite.app
+
+Option to connect custom domain (manual for now)
+
+5. Pricing Tiers
+Free Tier:
+
+1 website
+
+Limited AI generations
+
+Autosite subdomain only
+
+Pro Tier:
+
+Unlimited websites
+
+Unlimited AI prompts per month
+
+Connect your own domain
+
+Priority support
+
+Done-For-You:
+
+Flat-rate service to finish/polish website for user
+
+🧱 Tech Stack (Suggested)
+Layer	Stack
+Frontend	React + Tailwind (reuse for editor + dashboard)
+Backend	Laravel (legacy) or migrate to Node.js/Express or Django
+AI API	OpenAI (GPT-4) or Claude for text → HTML/content
+DB	MySQL/PostgreSQL (persist templates, user sites)
+Hosting	Vercel (for static sites), AWS/Render for app backend
+CMS	Optional headless CMS layer like Sanity or Strapi
+
+🧪 Prioritized User Stories (for MVP)
+Priority	User Story
+P0	As a user, I want to sign up, log in, and see a list of starter templates
+P0	As a user, I want to select a template, preview it, and launch my site
+P0	As a user, I want to enter a prompt and see a site scaffold generated
+P1	As a user, I want to talk to AI to modify a section of my site
+P1	As a user, I want to customize text, images, and order in a visual editor
+P1	As a user, I want to upgrade to a pro plan to unlock more features
+P2	As a user, I want to request help from a human expert
+
+⚠️ Assumptions to Interrogate
+“Users want AI to build their site”
+→ Not always. Many want to edit and tweak, not just click once. Offer editable starting points.
+
+“Prebuilt sites will keep users engaged”
+→ Only if they’re well-designed and clearly matched to user goals. Test vertical-specific templates.
+
+“AI alone can nail it”
+→ It won’t. Blend AI speed with visual control or you’ll lose users in frustration.
+
+🧠 Future Features (Post-MVP)
+AI image generation (e.g., DALL·E for custom banners)
+
+Branding assistant: logo + color palette generator
+
+Simple contact form/email integration
+
+E-commerce light (Stripe for 1–3 product stores)
+
+SEO + social card auto-generation
+
+AI site copywriting refinements
+
+Usage analytics for site owners
+
+🧭 Next Steps
+Refactor or rebuild the backend?
+→ Laravel may limit agility with AI integrations and editor complexity. A rebuild in a modern JS stack (Next.js + Firebase or Supabase) might give you longer runway.
+
+Prototype 3 flows:
+
+Choose & edit template
+
+Prompt → site
+
+AI modify existing site
+
+Collect feedback fast
+
+Launch free demo mode
+
+Offer prebuilt demo sites for each vertical
+
+Track where users drop off
