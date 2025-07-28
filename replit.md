@@ -5,6 +5,15 @@ AutoSite is a SAAS application that helps small businesses, solopreneurs, and fr
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
+Design preferences: Royal purple primary color (#663399) with golden yellow secondary (#FFD700), modern hero sections with animated backgrounds, removal of corporate styling.
+
+## Recent Changes (Jan 28, 2025)
+- Updated UI theme to royal purple and golden yellow color scheme
+- Created modern landing page with animated gradient background and hero section
+- Replaced Replit OAuth with username/password authentication system
+- Added login page with sign in/sign up tabs
+- Updated database schema to include username and password fields
+- Created demo user account for testing (username: demo, password: password)
 
 ## System Architecture
 
@@ -32,10 +41,11 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Authentication System
-- **Provider**: Replit OAuth with OpenID Connect
+- **Provider**: Username/password authentication with bcrypt hashing
 - **Session Storage**: PostgreSQL-backed sessions using connect-pg-simple
-- **User Management**: Automatic user creation/updates on login
+- **User Management**: User registration and login with secure password storage
 - **Route Protection**: Middleware-based authentication checks
+- **Demo Account**: Username: demo, Password: password
 
 ### AI Integration
 - **Provider**: OpenAI GPT-4o for website generation and modifications
