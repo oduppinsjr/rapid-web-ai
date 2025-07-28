@@ -183,7 +183,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Check AI generation limits
-      if (user.plan === 'free' && user.aiGenerationsUsed >= 3) {
+      if (user.plan === 'free' && (user.aiGenerationsUsed || 0) >= 3) {
         return res.status(403).json({ message: "AI generation limit reached. Upgrade to Pro for unlimited generations." });
       }
 

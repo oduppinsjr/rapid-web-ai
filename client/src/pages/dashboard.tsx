@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/hooks/useAuth";
-import { LayoutTemplate, Brain, Upload, Bell, Plus, Edit, ExternalLink, Utensils, User, Wrench, Briefcase } from "lucide-react";
+import type { User } from "@shared/schema";
+import { LayoutTemplate, Brain, Upload, Bell, Plus, Edit, ExternalLink, Utensils, User as UserIcon, Wrench, Briefcase } from "lucide-react";
 import TemplateGallery from "@/components/template-gallery";
 import AIBuilder from "@/components/ai-builder";
 import { useLocation } from "wouter";
@@ -21,11 +22,11 @@ interface Website {
 }
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user } = useAuth() as { user: User | undefined };
   const [, setLocation] = useLocation();
   const [activeTab, setActiveTab] = useState("overview");
 
-  const { data: websites, isLoading: websitesLoading } = useQuery({
+  const { data: websites, isLoading: websitesLoading } = useQuery<Website[]>({
     queryKey: ["/api/websites"],
     enabled: !!user,
   });
@@ -44,7 +45,7 @@ export default function Dashboard() {
 
   const getTemplateIcon = (templateId?: string) => {
     // You could map template IDs to specific icons based on category
-    const icons = [Utensils, User, Wrench, Briefcase];
+    const icons = [Utensils, UserIcon, Wrench, Briefcase];
     const IconComponent = icons[Math.floor(Math.random() * icons.length)];
     return IconComponent;
   };

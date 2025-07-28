@@ -34,7 +34,7 @@ export default function Editor() {
 
   const websiteId = params?.websiteId;
 
-  const { data: website, isLoading } = useQuery({
+  const { data: website, isLoading } = useQuery<Website>({
     queryKey: ["/api/websites", websiteId],
     enabled: !!websiteId,
   });
